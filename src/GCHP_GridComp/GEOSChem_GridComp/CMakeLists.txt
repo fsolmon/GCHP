@@ -13,6 +13,15 @@ set(TOMAS OFF CACHE BOOL
 set(MODAL_AERO_4MODE OFF CACHE BOOL
   "Switch to build MAM4 as a component of GEOS-Chem"
 ) 
+set(MODAL_AERO_4MODE_MOM OFF CACHE BOOL
+	"Switch to build MAM4_MOM as a component of GEOS-Chem"
+)
+set(MOSAIC_SPECIES OFF CACHE BOOL
+	"Switch to build MOSAIC as a component of GEOS-Chem"
+)
+set(RAIN_EVAP_TO_COARSE_AERO OFF CACHE BOOL
+	"Switch to build MAM4 / RETC as a component of GEOS-Chem"
+)
 set(LUO_WETDEP OFF CACHE BOOL
   "Switch to build the Luo et al (2020) wetdep scheme into GEOS-Chem"
 )
@@ -48,6 +57,9 @@ target_compile_definitions(GEOSChemBuildProperties INTERFACE
   $<$<BOOL:${REVERSE_OPERATORS}>:REVERSE_OPERATORS> 
   $<$<BOOL:${TOMAS}>:TOMAS>
   $<$<BOOL:${MODAL_AERO_4MODE}>:MODAL_AERO_4MODE>
+  $<$<BOOL:${MOSAIC_SPECIES}>:MOSAIC_SPECIES>
+  $<$<BOOL:${MODAL_AERO_4MODE_MOM}>:MODAL_AERO_4MODE_MOM>
+  $<$<BOOL:${RAIN_EVAP_TO_COARSE_AERO}>:RAIN_EVAP_TO_COARSE_AERO>
   $<$<STREQUAL:${TOMAS_BINS},15>:TOMAS15>
   $<$<STREQUAL:${TOMAS_BINS},40>:TOMAS40>
   $<$<BOOL:${LUO_WETDEP}>:LUO_WETDEP>
@@ -151,6 +163,9 @@ gc_pretty_print(VARIABLE USE_REAL8 IS_BOOLEAN)
 gc_pretty_print(VARIABLE APM IS_BOOLEAN)
 gc_pretty_print(VARIABLE TOMAS IS_BOOLEAN)
 gc_pretty_print(VARIABLE MODAL_AERO_4MODE IS_BOOLEAN)
+gc_pretty_print(VARIABLE MODAL_AERO_4MODE_MOM IS_BOOLEAN)
+gc_pretty_print(VARIABLE RAIN_EVAP_TO_COARSE_AERO IS_BOOLEAN)
+gc_pretty_print(VARIABLE MOSAIC_SPECIES IS_BOOLEAN)
 gc_pretty_print(VARIABLE RRTMG IS_BOOLEAN)
 gc_pretty_print(VARIABLE GTMM IS_BOOLEAN)
 gc_pretty_print(VARIABLE LUO_WETDEP IS_BOOLEAN)
