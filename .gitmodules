@@ -18,10 +18,10 @@
 	url = https://github.com/geoschem/FVdycoreCubed_GridComp.git
 [submodule "geos-chem"]
 	path = src/GCHP_GridComp/GEOSChem_GridComp/geos-chem
-	url = https://github.com/geoschem/geos-chem.git
+	url = https://github.com/fsolmon/geos-chem.git
 [submodule "HEMCO"]
 	path = src/GCHP_GridComp/GEOSChem_GridComp/HEMCO/HEMCO
-	url = https://github.com/geoschem/HEMCO.git
+	url = https://github.com/fsolmon/HEMCO.git
 [submodule "yaFyaml"]
 	path = src/yaFyaml
 	url = https://github.com/geoschem/yaFyaml.git
